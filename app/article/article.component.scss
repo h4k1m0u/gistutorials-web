@@ -1,0 +1,22 @@
+// import colors
+@import '~variables.scss';
+
+mat-card-header {
+    border-bottom: 1px solid mat-color($app-accent, 300);
+}
+
+mat-card-title {
+    font-size: 2em !important;
+}
+
+time {
+    color: $accent;
+}
+
+mat-card-content {
+    margin-top: 2em;
+}
+
+.spacer {
+    flex: auto;
+}

@@ -17,9 +17,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // import router
 import { RouterModule, Routes } from '@angular/router';
+import { ArticleComponent } from './article/article.component';
 
 const routes: Routes = [
     {path: 'articles/:page', component: ArticlesComponent},
+    {path: 'article/:id', component: ArticleComponent},
 ];
 
 
@@ -27,6 +29,7 @@ const routes: Routes = [
     declarations: [
         AppComponent,
         ArticlesComponent,
+        ArticleComponent,
     ],
     imports: [
         BrowserModule,

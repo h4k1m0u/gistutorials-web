@@ -5,16 +5,28 @@ mat-card {
     margin-bottom: 1em;
 }
 
+.spacer {
+    flex: auto;
+}
+
 mat-card-title {
     font-size: 2em !important;
+}
+
+mat-card-title > a {
+    text-decoration: none;
+    color: $primary;
+}
+
+time {
+    color: $accent;
 }
 
 nav {
     display: flex;
 }
 
-nav .spacer {
-    flex: auto;
+nav > .spacer {
     text-align: center;
     color: $primary;
 }
