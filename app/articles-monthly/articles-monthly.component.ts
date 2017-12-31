@@ -4,7 +4,7 @@
  */
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { URL } from '../constants';
+import { URL, MONTHS } from '../constants';
 import { ActivatedRoute } from '@angular/router';
 
 // Response interfaces
@@ -14,40 +14,32 @@ interface Article {
     date: string;
 }
 
-interface Feed {
-    count: number;
-    next: string;
-    previous: string;
-    results: Article[];
-}
-
 @Component({
-    selector: 'app-articles',
-    templateUrl: './articles.component.html',
-    styleUrls: ['./articles.component.scss']
+    selector: 'app-articles-monthly',
+    templateUrl: './articles-monthly.component.html',
+    styleUrls: ['./articles-monthly.component.scss']
 })
-export class ArticlesComponent implements OnInit {
+export class ArticlesMonthlyComponent implements OnInit {
     articles: Article[];
-    page: number;
-    numPages: number;
+    month: number;
+    months = MONTHS;
 
     // inject http
     constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
     ngOnInit() {
-        // get articles in requested page asynchronously
+        // get articles in requested month asynchronously
         this.route.params.subscribe(params => {
-            this.page = Number(params['page'])
+            this.month = Number(params['month'])
             this.getArticles();
         });
     }
 
     getArticles() {
-        // get articles from the server
-        this.http.get<Feed>(URL + '/api/articles/?page=' + this.page).subscribe(
+        // get articles for given month from the server
+        this.http.get<Article[]>(URL + '/api/articles/month/' + this.month + '/').subscribe(
             res => {
-                this.articles = res.results;
-                this.numPages = Math.ceil(res.count / 10);
+                this.articles = res;
             },
             err => {
                 console.log('Error: ' + err.message);

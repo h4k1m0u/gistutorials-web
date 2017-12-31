@@ -3,12 +3,21 @@ import { NgModule } from '@angular/core';
 
 // import material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule, MatMenuModule, MatButtonModule, MatIconModule } from '@angular/material';
-import { MatCardModule } from '@angular/material/card';
+import {
+    MatToolbarModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    MatSidenavModule,
+    MatListModule,
+} from '@angular/material';
 
 // import components
 import { AppComponent } from './app.component';
 import { ArticlesComponent } from './articles/articles.component';
+import { ArticleComponent } from './article/article.component';
+import { ArticlesMonthlyComponent } from './articles-monthly/articles-monthly.component';
 
 // import ngModel
 import { FormsModule } from '@angular/forms';
@@ -17,11 +26,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // import router
 import { RouterModule, Routes } from '@angular/router';
-import { ArticleComponent } from './article/article.component';
 
 const routes: Routes = [
     {path: 'articles/:page', component: ArticlesComponent},
     {path: 'article/:id', component: ArticleComponent},
+    {path: 'articles/month/:month', component: ArticlesMonthlyComponent},
 ];
 
 
@@ -30,6 +39,7 @@ const routes: Routes = [
         AppComponent,
         ArticlesComponent,
         ArticleComponent,
+        ArticlesMonthlyComponent,
     ],
     imports: [
         BrowserModule,
@@ -44,6 +54,8 @@ const routes: Routes = [
         MatButtonModule,
         MatIconModule,
         MatCardModule,
+        MatSidenavModule,
+        MatListModule,
     ],
     providers: [
     ],

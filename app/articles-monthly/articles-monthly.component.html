@@ -1,6 +1,6 @@
-<div *ngIf="articles?.length > 0; else noarticles">
-    <h1>Articles</h1>
+<h1>Articles in {{ months[month - 1] }}</h1>
 
+<div *ngIf="articles?.length > 0; else noarticles">
     <ul>
         <li *ngFor="let article of articles">
             <mat-card>
@@ -19,18 +19,6 @@
             </mat-card>
         </li>
     </ul>
-
-    <nav>
-        <button mat-raised-button color="primary" *ngIf="page > 1" routerLink="/articles/{{ page - 1 }}">
-            <mat-icon>navigate_before</mat-icon>
-        </button>
-        <span class="spacer">
-            {{ page }}
-        </span>
-        <button mat-raised-button color="primary" *ngIf="page < numPages" routerLink="/articles/{{ page + 1 }}">
-            <mat-icon>navigate_next</mat-icon>
-        </button>
-    </nav>
 </div>
 
 <ng-template #noarticles>

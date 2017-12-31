@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MONTHS } from './constants';
 
 @Component({
     selector: 'app-root',
@@ -8,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
     appName = 'GIS Tutorials';
+    months = MONTHS;
     
     // inject classes
     constructor(private router: Router) { }

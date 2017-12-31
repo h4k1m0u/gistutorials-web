@@ -5,7 +5,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { URL } from '../constants';
-import { MatTableDataSource } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
 
 // Response interfaces
