@@ -17,7 +17,7 @@ import {
 import { AppComponent } from './app.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ArticleComponent } from './article/article.component';
-import { ArticlesMonthlyComponent } from './articles-monthly/articles-monthly.component';
+import { ArticlesDateComponent } from './articles-date/articles-date.component';
 
 // import ngModel
 import { FormsModule } from '@angular/forms';
@@ -30,7 +30,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
     {path: 'articles/:page', component: ArticlesComponent},
     {path: 'article/:id', component: ArticleComponent},
-    {path: 'articles/month/:month', component: ArticlesMonthlyComponent},
+    {path: 'articles/date/:year/:month', component: ArticlesDateComponent},
 ];
 
 
@@ -39,7 +39,7 @@ const routes: Routes = [
         AppComponent,
         ArticlesComponent,
         ArticleComponent,
-        ArticlesMonthlyComponent,
+        ArticlesDateComponent,
     ],
     imports: [
         BrowserModule,

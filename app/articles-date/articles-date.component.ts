@@ -15,29 +15,31 @@ interface Article {
 }
 
 @Component({
-    selector: 'app-articles-monthly',
-    templateUrl: './articles-monthly.component.html',
-    styleUrls: ['./articles-monthly.component.scss']
+    selector: 'app-articles-date',
+    templateUrl: './articles-date.component.html',
+    styleUrls: ['./articles-date.component.scss']
 })
-export class ArticlesMonthlyComponent implements OnInit {
+export class ArticlesDateComponent implements OnInit {
     articles: Article[];
     month: number;
-    months = MONTHS;
+    monthsNames = MONTHS;
+    year: number;
 
     // inject http
     constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
     ngOnInit() {
-        // get articles in requested month asynchronously
+        // get articles in requested month and year asynchronously
         this.route.params.subscribe(params => {
             this.month = Number(params['month'])
+            this.year = Number(params['year'])
             this.getArticles();
         });
     }
 
     getArticles() {
-        // get articles for given month from the server
-        this.http.get<Article[]>(URL + '/api/articles/month/' + this.month + '/').subscribe(
+        // get articles for given month in given year from the server
+        this.http.get<Article[]>(URL + '/api/articles/date/' + this.year + '/' + this.month + '/').subscribe(
             res => {
                 this.articles = res;
             },

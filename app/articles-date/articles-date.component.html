@@ -1,4 +1,4 @@
-<h1>Articles in {{ months[month - 1] }}</h1>
+<h1>Articles in {{ monthsNames[month - 1] }} {{ year }}</h1>
 
 <div *ngIf="articles?.length > 0; else noarticles">
     <ul>

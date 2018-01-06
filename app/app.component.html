@@ -27,8 +27,8 @@
         <nav>
             <mat-nav-list>
                 <a mat-list-item *ngFor="let month of months; let i = index"
-                   routerLink="/articles/month/{{ i + 1 }}" (click)="sidenav.toggle()">
-                    {{ month }}
+                    routerLink="/articles/date/{{ month[0] }}/{{ month[1] }}/" (click)="sidenav.toggle()">
+                    {{ monthsNames[month[1] - 1] }} {{ month[0] }}
                 </a>
             </mat-nav-list>
         </nav>
