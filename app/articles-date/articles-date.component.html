@@ -2,7 +2,13 @@
 
 <div *ngIf="articles?.length > 0; else noarticles">
     <ul>
-        <li *ngFor="let article of articles">
+        <li *ngFor="let article of articles; let isFirst=first">
+            <nav *ngIf="isFirst">
+                <button mat-raised-button color="primary" routerLink="/articles/1">
+                    <mat-icon>view_list</mat-icon> Return to list
+                </button>
+            </nav>
+
             <mat-card>
                 <mat-card-header>
                     <mat-card-title>

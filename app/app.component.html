@@ -26,6 +26,9 @@
     <mat-sidenav mode="side" #sidenav>
         <nav>
             <mat-nav-list>
+                <a mat-list-item routerLink="/articles/1/" (click)="sidenav.toggle()">
+                    All articles
+                </a>
                 <a mat-list-item *ngFor="let month of months; let i = index"
                     routerLink="/articles/date/{{ month[0] }}/{{ month[1] }}/" (click)="sidenav.toggle()">
                     {{ monthsNames[month[1] - 1] }} {{ month[0] }}
