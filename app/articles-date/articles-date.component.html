@@ -18,6 +18,8 @@
                     <time>{{ article.date | date:'dd/MM/yyyy' }}</time>
                 </mat-card-header>
 
+                <img mat-card-image src="{{ article.image }}" alt="{{ article.title }}">
+
                 <mat-card-actions>
                     <button mat-button>Like</button>
                     <button mat-button>Share</button>
