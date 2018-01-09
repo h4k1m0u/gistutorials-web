@@ -6,13 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { URL, MONTHS } from '../constants';
 import { ActivatedRoute } from '@angular/router';
-
-// Response interfaces
-interface Article {
-    title: string;
-    text: string;
-    date: string;
-}
+import { Article } from '../models/article.model';
 
 @Component({
     selector: 'app-articles-date',

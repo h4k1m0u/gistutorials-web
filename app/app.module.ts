@@ -1,6 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// import services & resolves
+import { ArticlesService } from './services/articles.service';
+import { ArticleResolve } from './article/article.resolve';
+import { ArticlesResolve } from './articles/articles.resolve';
+
 // import material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
@@ -28,8 +33,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-    {path: 'articles/:page', component: ArticlesComponent},
-    {path: 'article/:id', component: ArticleComponent},
+    {path: 'articles', component: ArticlesComponent, resolve: { articles: ArticlesResolve }},
+    {path: 'article/:id', component: ArticleComponent, resolve: { article: ArticleResolve }},
     {path: 'articles/date/:year/:month', component: ArticlesDateComponent},
 ];
 
@@ -58,6 +63,10 @@ const routes: Routes = [
         MatListModule,
     ],
     providers: [
+        // services & resolvers
+        ArticlesService,
+        ArticleResolve,
+        ArticlesResolve,
     ],
     bootstrap: [AppComponent]
 })

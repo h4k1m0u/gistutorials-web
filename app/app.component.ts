@@ -23,7 +23,7 @@ export class AppComponent {
                 this.months = res;
 
                 // redirect to list of articles
-                this.router.navigateByUrl('/articles/1');
+                this.router.navigateByUrl('/articles');
             },
             err => {
                 console.log('Error: ' + err.message);

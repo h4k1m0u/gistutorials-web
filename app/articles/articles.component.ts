@@ -6,20 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { URL } from '../constants';
 import { ActivatedRoute } from '@angular/router';
-
-// Response interfaces
-interface Article {
-    title: string;
-    text: string;
-    date: string;
-}
-
-interface Feed {
-    count: number;
-    next: string;
-    previous: string;
-    results: Article[];
-}
+import { Article } from '../models/article.model';
 
 @Component({
     selector: 'app-articles',
@@ -28,30 +15,14 @@ interface Feed {
 })
 export class ArticlesComponent implements OnInit {
     articles: Article[];
-    page: number;
-    numPages: number;
 
     // inject http
     constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
     ngOnInit() {
-        // get articles in requested page asynchronously
-        this.route.params.subscribe(params => {
-            this.page = Number(params['page'])
-            this.getArticles();
+        // get requested articles through resolve
+        this.route.data.subscribe((data) => {
+            this.articles = data.articles;
         });
-    }
-
-    getArticles() {
-        // get articles from the server
-        this.http.get<Feed>(URL + '/api/articles/?page=' + this.page).subscribe(
-            res => {
-                this.articles = res.results;
-                this.numPages = Math.ceil(res.count / 10);
-            },
-            err => {
-                console.log('Error: ' + err.message);
-            }
-        );
     }
 }
