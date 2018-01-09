@@ -20,7 +20,7 @@ export class ArticlesDateComponent implements OnInit {
     year: number;
 
     // inject http
-    constructor(private http: HttpClient, private route: ActivatedRoute) { }
+    constructor(private route: ActivatedRoute) { }
 
     ngOnInit() {
         // get requested articles for given date through resolve

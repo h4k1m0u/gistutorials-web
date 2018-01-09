@@ -17,7 +17,7 @@ export class ArticlesComponent implements OnInit {
     articles: Article[];
 
     // inject http
-    constructor(private http: HttpClient, private route: ActivatedRoute) { }
+    constructor(private route: ActivatedRoute) { }
 
     ngOnInit() {
         // get requested articles through resolve

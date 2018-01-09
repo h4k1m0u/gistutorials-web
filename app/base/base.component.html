@@ -1,0 +1,35 @@
+<header>
+    <mat-toolbar color="primary">
+        <button mat-button routerLink="/articles/">
+            <h1>
+                {{ appName }}
+            </h1>
+        </button>
+        <span class="spacer"></span>
+        <button mat-button [matMenuTriggerFor]="appsMenu">
+            <mat-icon>apps</mat-icon>
+        </button>
+    </mat-toolbar>
+
+    <nav>
+        <mat-menu #appsMenu>
+            <a mat-menu-item href="http://gistutorials.com/bookquotes/" target="_blank">
+                <mat-icon>format_quote</mat-icon> Bookquotes
+            </a>
+            <a mat-menu-item href="http://gistutorials.com/accounting/" target="_blank">
+                <mat-icon>shopping_cart</mat-icon> Accounting
+            </a>
+        </mat-menu>
+    </nav>
+</header>
+
+<router-outlet></router-outlet>
+
+<footer>
+    <mat-toolbar>
+        <span class="spacer"></span>
+        <span>
+            By <a href="https://twitter.com/h4k1m0u" target="_blank" mat-raised-button color="primary">@h4k1m0u</a>
+        </span>
+    </mat-toolbar>
+</footer>

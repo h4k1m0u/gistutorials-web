@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { URL, MONTHS } from './constants';
 
@@ -9,25 +9,16 @@ import { URL, MONTHS } from './constants';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    appName = 'GIS Tutorials';
     months: number[][];
     monthsNames = MONTHS;
     
     // inject classes
-    constructor(private http: HttpClient, private router: Router) { }
+    constructor(private route: ActivatedRoute, private router: Router) { }
 
     ngOnInit() {
-        // Get only months having articles
-        this.http.get<number[][]>(URL + '/api/articles/dates/').subscribe(
-            res => {
-                this.months = res;
-
-                // redirect to list of articles
-                this.router.navigateByUrl('/articles');
-            },
-            err => {
-                console.log('Error: ' + err.message);
-            }
-        );
+        // get months containing articles through resolve
+        this.route.data.subscribe((data) => {
+            this.months = data.months;
+        });
     }
 }
