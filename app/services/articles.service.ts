@@ -42,4 +42,21 @@ export class ArticlesService {
             );
         });
     }
+
+    getArticlesDate(year, month) {
+        // send articles as observable to resolve
+        return Observable.create(observer => {
+            // get articles for given month in given year from the server
+            this.http.get<Article[]>(URL + '/api/articles/date/' + year + '/' + month + '/').subscribe(
+                res => {
+                    // send date (needed in template)
+                    observer.next({articles: res, year: year, month: month});
+                    observer.complete();
+                },
+                err => {
+                    console.log('Error: ' + err.message);
+                }
+            );
+        });
+    }
 }

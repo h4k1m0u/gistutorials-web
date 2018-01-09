@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { ArticlesService } from './services/articles.service';
 import { ArticleResolve } from './article/article.resolve';
 import { ArticlesResolve } from './articles/articles.resolve';
+import { ArticlesDateResolve } from './articles-date/articles-date.resolve';
 
 // import material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -35,7 +36,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
     {path: 'articles', component: ArticlesComponent, resolve: { articles: ArticlesResolve }},
     {path: 'article/:id', component: ArticleComponent, resolve: { article: ArticleResolve }},
-    {path: 'articles/date/:year/:month', component: ArticlesDateComponent},
+    {path: 'articles/date/:year/:month', component: ArticlesDateComponent, resolve: { articlesDate: ArticlesDateResolve }},
 ];
 
 
@@ -67,6 +68,7 @@ const routes: Routes = [
         ArticlesService,
         ArticleResolve,
         ArticlesResolve,
+        ArticlesDateResolve,
     ],
     bootstrap: [AppComponent]
 })

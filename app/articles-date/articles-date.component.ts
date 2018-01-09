@@ -23,23 +23,11 @@ export class ArticlesDateComponent implements OnInit {
     constructor(private http: HttpClient, private route: ActivatedRoute) { }
 
     ngOnInit() {
-        // get articles in requested month and year asynchronously
-        this.route.params.subscribe(params => {
-            this.month = Number(params['month'])
-            this.year = Number(params['year'])
-            this.getArticles();
+        // get requested articles for given date through resolve
+        this.route.data.subscribe((data) => {
+            this.year = data.articlesDate.year;
+            this.month = data.articlesDate.month;
+            this.articles = data.articlesDate.articles;
         });
-    }
-
-    getArticles() {
-        // get articles for given month in given year from the server
-        this.http.get<Article[]>(URL + '/api/articles/date/' + this.year + '/' + this.month + '/').subscribe(
-            res => {
-                this.articles = res;
-            },
-            err => {
-                console.log('Error: ' + err.message);
-            }
-        );
     }
 }

@@ -6,13 +6,13 @@
 
 <mat-card>
     <mat-card-header>
-        <mat-card-title>{{ article?.title }}</mat-card-title>
+        <mat-card-title>{{ article.title }}</mat-card-title>
         <span class="spacer"></span>
-        <time>{{ article?.date | date:'dd/MM/yyyy' }}</time>
+        <time>{{ article.date | date:'dd/MM/yyyy' }}</time>
     </mat-card-header>
 
     <mat-card-content>
-        <div innerHtml="{{ article?.text }}"></div>
+        <div innerHtml="{{ article.text }}"></div>
     </mat-card-content>
 
     <mat-card-actions>
