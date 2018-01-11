@@ -36,6 +36,10 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 // import router
 import { RouterModule, Routes } from '@angular/router';
 
+// import google analytics for angular
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+
 // routes
 const routes: Routes = [
     // base component contains main layout
@@ -73,6 +77,7 @@ const routes: Routes = [
         FormsModule,
         HttpClientModule,
         RouterModule.forRoot(routes),
+        Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
 
         // material
         BrowserAnimationsModule,

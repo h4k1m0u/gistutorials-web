@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
 @Component({
   selector: 'app-base',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class BaseComponent implements OnInit {
     appName = 'GIS Tutorials';
 
-    constructor() { }
+    constructor(private googleAnalytics: Angulartics2GoogleAnalytics) { }
 
     ngOnInit() {
     }
