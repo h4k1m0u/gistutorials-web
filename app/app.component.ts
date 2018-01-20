@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { URL, MONTHS } from './constants';
+import { MediaChange, ObservableMedia } from '@angular/flex-layout';
 
 @Component({
     selector: 'app-root',
@@ -11,14 +12,24 @@ import { URL, MONTHS } from './constants';
 export class AppComponent {
     months: number[][];
     monthsNames = MONTHS;
+    opened: boolean = true;
     
     // inject classes
-    constructor(private route: ActivatedRoute, private router: Router) { }
+    constructor(private route: ActivatedRoute, private router: Router,
+                private media: ObservableMedia) { }
 
     ngOnInit() {
         // get months containing articles through resolve
         this.route.data.subscribe((data) => {
             this.months = data.months;
+        });
+
+        // close sidebar if media is mobile size
+        this.media.subscribe((change: MediaChange) => {
+            if (this.media.isActive('xs'))
+                this.opened = false;
+            else
+                this.opened = true;
         });
     }
 }

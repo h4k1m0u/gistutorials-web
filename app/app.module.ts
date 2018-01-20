@@ -40,6 +40,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
+// import flex layouts
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 // routes
 const routes: Routes = [
     // base component contains main layout
@@ -78,6 +81,7 @@ const routes: Routes = [
         HttpClientModule,
         RouterModule.forRoot(routes),
         Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
+        FlexLayoutModule,
 
         // material
         BrowserAnimationsModule,

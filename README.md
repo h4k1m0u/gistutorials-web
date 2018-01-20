@@ -21,8 +21,9 @@ $ ng
 5. Run the server: `ng serve`
 6. Create a new component: `ng generate component <component-name>`
 7. Create a new service: `ng generate service <service-name>`
-8. Install `angular-material`: `npm install @angular/material @angular/cdk @angular/animations`
-9. Install `angulatics2`: `npm install angulartics2`
+8. Install `angular-material` (User Interface): `npm install @angular/material @angular/cdk @angular/animations`
+9. Install `angulatics2` (Google Analytics): `npm install angulartics2`
+10. Install `flex-layout` (Responsiveness): `npm install @angular/flex-layout`
 
 # Installation of this repo
 
