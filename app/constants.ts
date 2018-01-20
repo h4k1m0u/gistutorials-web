@@ -1,4 +1,4 @@
-export const URL: string = 'http://gistutorials.com';
+export const URL: string = 'http://www.gistutorials.com';
 
 export const MONTHS = [
     'January',

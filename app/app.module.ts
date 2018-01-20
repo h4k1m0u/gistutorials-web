@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-// import services & resolves
+// services & resolves
 import { MonthsService } from './services/months.service';
 import { ArticlesService } from './services/articles.service';
 import { MonthsResolve } from './months.resolve';
@@ -9,7 +9,7 @@ import { ArticleResolve } from './article/article.resolve';
 import { ArticlesResolve } from './articles/articles.resolve';
 import { ArticlesDateResolve } from './articles-date/articles-date.resolve';
 
-// import material
+// material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
     MatToolbarModule,
@@ -21,26 +21,24 @@ import {
     MatListModule,
 } from '@angular/material';
 
-// import components
+// components
 import { BaseComponent } from './base/base.component';
 import { AppComponent } from './app.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ArticleComponent } from './article/article.component';
 import { ArticlesDateComponent } from './articles-date/articles-date.component';
 
-// import ngModel
-import { FormsModule } from '@angular/forms';
-// import http
+// http client
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-// import router
+// router
 import { RouterModule, Routes } from '@angular/router';
 
-// import google analytics for angular
+// google analytics for angular
 import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 
-// import flex layouts
+// flex layouts
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 // routes
@@ -77,7 +75,6 @@ const routes: Routes = [
     ],
     imports: [
         BrowserModule,
-        FormsModule,
         HttpClientModule,
         RouterModule.forRoot(routes),
         Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
