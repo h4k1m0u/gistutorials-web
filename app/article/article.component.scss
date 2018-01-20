@@ -6,11 +6,15 @@ mat-card-header {
 }
 
 mat-card-title {
-    font-size: 2em !important;
+    h2 {
+        font-size: 32px !important;
+    }
 }
 
-time {
-    color: $accent;
+mat-card-subtitle {
+    time {
+        color: $accent;
+    }
 }
 
 mat-card-content {
@@ -21,8 +25,4 @@ mat-card-content {
         width: 80%;
         margin: 0 auto;
     }
-}
-
-.spacer {
-    flex: auto;
 }

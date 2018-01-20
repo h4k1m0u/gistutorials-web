@@ -6,9 +6,12 @@
 
 <mat-card>
     <mat-card-header>
-        <mat-card-title>{{ article.title }}</mat-card-title>
-        <span class="spacer"></span>
-        <time>{{ article.date | date:'dd/MM/yyyy' }}</time>
+        <mat-card-title>
+            <h2>{{ article.title }}</h2>
+        </mat-card-title>
+        <mat-card-subtitle>
+            <time>{{ article.date | date:'dd/MM/yyyy' }}</time>
+        </mat-card-subtitle>
     </mat-card-header>
 
     <mat-card-content>
