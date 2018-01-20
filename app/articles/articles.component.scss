@@ -41,7 +41,8 @@ nav > .spacer {
     color: $primary;
 }
 
-.mat-card-image {
-    width: auto;
-    margin: auto;
+img.mat-card-image {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
 }

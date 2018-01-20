@@ -15,6 +15,12 @@ time {
 
 mat-card-content {
     margin-top: 2em;
+    
+    img {
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+    }
 }
 
 .spacer {
