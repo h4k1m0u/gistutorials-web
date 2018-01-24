@@ -41,6 +41,9 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 // flex layouts
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+// share buttons
+import { ShareButtonModule } from '@ngx-share/button';
+
 // routes
 const routes: Routes = [
     // base component contains main layout
@@ -79,6 +82,7 @@ const routes: Routes = [
         RouterModule.forRoot(routes),
         Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
         FlexLayoutModule,
+        ShareButtonModule.forRoot(),
 
         // material
         BrowserAnimationsModule,

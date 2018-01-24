@@ -24,6 +24,7 @@ $ ng
 8. Install `angular-material` (User Interface): `npm install @angular/material @angular/cdk @angular/animations`
 9. Install `angulatics2` (Google Analytics): `npm install angulartics2`
 10. Install `flex-layout` (Responsiveness): `npm install @angular/flex-layout`
+11. Install `ngx-sharebuttons` (Share on social media): `npm install @ngx-share/core @ngx-share/button font-awesome`
 
 # Installation of this repo
 

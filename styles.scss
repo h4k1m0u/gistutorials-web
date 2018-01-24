@@ -7,6 +7,11 @@
 $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 @include angular-material-theme($app-theme);
 
+// Import share buttons styles
+@import '~font-awesome/css/font-awesome.min.css';
+@import '~@ngx-share/button/styles/share-buttons';
+@import '~@ngx-share/button/styles/themes/default/default-theme';
+
 body {
     margin: 0;
     background: lightgray;
