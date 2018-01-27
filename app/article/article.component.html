@@ -15,7 +15,7 @@
     </mat-card-header>
 
     <mat-card-content>
-        <div innerHtml="{{ article.text }}"></div>
+        <div highlight="all" [innerHtml]="article.text | safeHtml"></div>
     </mat-card-content>
 
     <mat-card-actions>

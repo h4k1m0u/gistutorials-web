@@ -25,6 +25,7 @@ $ ng
 9. Install `angulatics2` (Google Analytics): `npm install angulartics2`
 10. Install `flex-layout` (Responsiveness): `npm install @angular/flex-layout`
 11. Install `ngx-sharebuttons` (Share on social media): `npm install @ngx-share/core @ngx-share/button font-awesome`
+12. Install `ngx-highlightjs` (Code syntax highlighting): `npm install ngx-highlightjs`
 
 # Installation of this repo
 

@@ -28,6 +28,9 @@ import { ArticlesComponent } from './articles/articles.component';
 import { ArticleComponent } from './article/article.component';
 import { ArticlesDateComponent } from './articles-date/articles-date.component';
 
+// pipes
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
+
 // http client
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -43,6 +46,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 // share buttons
 import { ShareButtonModule } from '@ngx-share/button';
+
+// syntax highlight code
+import { HighlightModule } from 'ngx-highlightjs';
 
 // routes
 const routes: Routes = [
@@ -75,6 +81,7 @@ const routes: Routes = [
         ArticleComponent,
         ArticlesDateComponent,
         BaseComponent,
+        SafeHtmlPipe,
     ],
     imports: [
         BrowserModule,
@@ -83,6 +90,7 @@ const routes: Routes = [
         Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
         FlexLayoutModule,
         ShareButtonModule.forRoot(),
+        HighlightModule.forRoot(),
 
         // material
         BrowserAnimationsModule,
