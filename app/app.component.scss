@@ -1,7 +1,37 @@
+// import colors
+@import '~variables.scss';
+
 mat-sidenav-container {
     flex: auto;
 }
 
 main {
     margin: 1em;
+}
+
+aside {
+    margin: 1em;
+
+    hr {
+        border: 0;
+        height: 1px;
+        background-color:  mat-color($app-accent, 300);
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+
+        a {
+            text-decoration: none;
+            color: $twitter-primary;
+        }
+    }
+
+    ul {
+        list-style-type: circle;
+    }
 }

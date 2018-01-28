@@ -13,7 +13,7 @@ mat-card-title {
 
 mat-card-subtitle {
     time {
-        color: $accent;
+        color:  mat-color($app-accent, 300);
     }
 }
 

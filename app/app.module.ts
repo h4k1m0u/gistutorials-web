@@ -32,7 +32,7 @@ import { ArticlesDateComponent } from './articles-date/articles-date.component';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 
 // http client
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 // router
 import { RouterModule, Routes } from '@angular/router';
