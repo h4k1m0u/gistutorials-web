@@ -14,12 +14,22 @@
         </mat-card-subtitle>
     </mat-card-header>
 
+    <hr/>
+
     <mat-card-content>
         <article highlight="all" [innerHtml]="article.text | safeHtml"></article>
     </mat-card-content>
 
-    <mat-card-actions>
+    <hr/>
+
+    <mat-card-footer>
+        <ul>
+            <li *ngFor="let tag of article.tags">
+                #{{ tag.name }}
+            </li>
+        </ul>
+
         <share-button button="twitter" text="Tweet" showText="true" description="{{ article.title }}"></share-button>
         <share-button button="facebook" text="Share" showText="true"></share-button>
-    </mat-card-actions>
+    </mat-card-footer>
 </mat-card>

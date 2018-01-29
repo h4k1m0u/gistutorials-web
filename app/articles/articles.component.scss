@@ -10,11 +10,6 @@ mat-card {
     margin-bottom: 1em;
 }
 
-mat-card-header {
-    margin-bottom: 24px;
-    border-bottom: 1px solid $primary;
-}
-
 mat-card-title {
     h2 {
         font-size: 32px;
@@ -28,21 +23,38 @@ mat-card-title {
 
 mat-card-subtitle {
     time {
-        color: $primary;
+        color:  mat-color($app-accent, 300);
     }
-}
-
-nav {
-    display: flex;
-}
-
-nav > .spacer {
-    text-align: center;
-    color: $primary;
 }
 
 img.mat-card-image {
     display: block;
     width: 80%;
-    margin: 0 auto;
+    margin: 1.5em auto;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color:  mat-color($app-accent, 300);
+}
+
+mat-card-footer {
+    display: flex !important;
+    margin: auto !important;
+    flex-wrap: wrap;
+
+    ul {
+        flex: auto;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 14px auto;
+        padding: 0;
+        list-style: none;
+        color: $primary;
+
+        li {
+            margin-right: 1em;
+        }
+    }
 }
