@@ -1,14 +1,20 @@
 <header>
     <mat-toolbar color="primary">
-        <button mat-button routerLink="/articles/">
-            <h1>
-                {{ appName }}
-            </h1>
-        </button>
-        <span class="spacer"></span>
-        <button mat-button [matMenuTriggerFor]="appsMenu">
-            <mat-icon>apps</mat-icon>
-        </button>
+        <mat-toolbar-row>
+            <button mat-button routerLink="/articles/">
+                <h1>
+                    {{ appName }}
+                </h1>
+            </button>
+            <span class="spacer"></span>
+            <button mat-button [matMenuTriggerFor]="appsMenu">
+                <mat-icon>apps</mat-icon>
+            </button>
+        </mat-toolbar-row>
+
+        <mat-toolbar-row class="banner">
+            {{ slogan }}
+        </mat-toolbar-row>
     </mat-toolbar>
 
     <nav>
@@ -27,7 +33,12 @@
 
 <footer>
     <mat-toolbar>
-        <span class="spacer"></span>
+        <button mat-button routerLink="/articles/">
+            <h1>
+                {{ appName }}
+            </h1>
+        </button>
+        <span class="spacer date">&copy; {{ date | date: 'yyyy' }}</span>
         <span>
             By <a href="https://twitter.com/h4k1m0u" target="_blank" mat-raised-button color="primary">@h4k1m0u</a>
         </span>

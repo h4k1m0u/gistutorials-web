@@ -1,3 +1,6 @@
+// import colors
+@import '~variables.scss';
+
 :host {
     display: flex;
     flex-direction: column;
@@ -8,10 +11,19 @@
     flex: auto;
 }
 
-footer {
-    margin-top: auto;
+.banner {
+    height: 250px;
+    background: url('/assets/images/banner.png') no-repeat;
+    color: white;
+    font-family: 'Roboto Condensed';
+    font-size: 5rem;
 }
 
-mat-toolbar img {
-    height: 60px;
+footer {
+    margin-top: auto;
+
+    .date {
+        text-align: center;
+        font-size: 1rem;
+    }
 }

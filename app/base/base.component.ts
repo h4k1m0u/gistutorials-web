@@ -8,6 +8,8 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 })
 export class BaseComponent implements OnInit {
     appName = 'GIS Tutorials';
+    slogan = 'GIS Tutorials For Everyone';
+    date = new Date();
 
     constructor(private googleAnalytics: Angulartics2GoogleAnalytics) { }
 
