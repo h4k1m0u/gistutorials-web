@@ -27,6 +27,7 @@ $ ng
 11. Install `ngx-sharebuttons` (Share on social media): `npm install @ngx-share/core @ngx-share/button font-awesome`
 12. Install `ngx-highlightjs` (Code syntax highlighting): `npm install ngx-highlightjs`
 13. Install `ngx-page-scroll` (Scroll to content): `npm install ngx-page-scroll`
+14. Install `ngx-disqus` (Disqus comments): `npm install ngx-disqus`
 
 # Installation of this repo
 

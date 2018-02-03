@@ -55,6 +55,9 @@ import { HighlightModule } from 'ngx-highlightjs';
 // page scroll
 import {NgxPageScrollModule} from 'ngx-page-scroll';
 
+// disqus comments
+import { DisqusModule } from 'ngx-disqus';
+
 // routes
 const routes: Routes = [
     // base component contains main layout
@@ -99,6 +102,7 @@ const routes: Routes = [
         ShareButtonModule.forRoot(),
         HighlightModule.forRoot(),
         NgxPageScrollModule,
+        DisqusModule.forRoot('gistutorials'),
 
         // material
         BrowserAnimationsModule,
