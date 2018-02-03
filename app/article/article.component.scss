@@ -21,6 +21,19 @@ mat-card-content {
         width: 80%;
         margin: 0 auto;
     }
+    
+    a {
+        color: $primary !important;
+        text-decoration: none !important;
+    }
+
+    .marker {
+        padding: 1px 2px;
+        border-radius: 2px;
+        color: #fff;
+        background-color: $warn;
+        font-family: 'Roboto Condensed';
+    }
 }
 
 hr {
