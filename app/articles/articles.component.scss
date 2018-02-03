@@ -51,10 +51,14 @@ mat-card-footer {
         margin: 14px auto;
         padding: 0;
         list-style: none;
-        color: $primary;
 
         li {
             margin-right: 1em;
+
+            a {
+                color: $primary;
+                text-decoration: none;
+            }
         }
     }
 }

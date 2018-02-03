@@ -8,6 +8,7 @@ import { MonthsResolve } from './months.resolve';
 import { ArticleResolve } from './article/article.resolve';
 import { ArticlesResolve } from './articles/articles.resolve';
 import { ArticlesDateResolve } from './articles-date/articles-date.resolve';
+import { ArticlesTagResolve } from './articles-tag/articles-tag.resolve';
 
 // material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -27,6 +28,7 @@ import { AppComponent } from './app.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ArticleComponent } from './article/article.component';
 import { ArticlesDateComponent } from './articles-date/articles-date.component';
+import { ArticlesTagComponent } from './articles-tag/articles-tag.component';
 
 // pipes
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
@@ -72,6 +74,7 @@ const routes: Routes = [
             {path: 'articles', component: ArticlesComponent, resolve: { articles: ArticlesResolve }},
             {path: 'article/:id', component: ArticleComponent, resolve: { article: ArticleResolve }},
             {path: 'articles/date/:year/:month', component: ArticlesDateComponent, resolve: { articlesDate: ArticlesDateResolve }},
+            {path: 'articles/tag/:tag', component: ArticlesTagComponent, resolve: { articlesTag: ArticlesTagResolve }},
         ]
     }
 ];
@@ -83,6 +86,7 @@ const routes: Routes = [
         ArticlesComponent,
         ArticleComponent,
         ArticlesDateComponent,
+        ArticlesTagComponent,
         BaseComponent,
         SafeHtmlPipe,
     ],
@@ -114,6 +118,7 @@ const routes: Routes = [
         ArticleResolve,
         ArticlesResolve,
         ArticlesDateResolve,
+        ArticlesTagResolve,
     ],
     bootstrap: [BaseComponent]
 })

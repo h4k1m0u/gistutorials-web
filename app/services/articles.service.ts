@@ -3,7 +3,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { URL } from '../constants';
-import { Article } from '../models/article.model';
+import { Article, Tag } from '../models/article.model';
 import { Feed } from '../models/feed.model';
 import { HttpClient } from '@angular/common/http';
 
@@ -52,6 +52,31 @@ export class ArticlesService {
                     // send date (needed in template)
                     observer.next({articles: res, year: year, month: month});
                     observer.complete();
+                },
+                err => {
+                    console.log('Error: ' + err.message);
+                }
+            );
+        });
+    }
+
+    getArticlesTag(tagId) {
+        // send articles as observable to resolve
+        return Observable.create(observer => {
+            // get articles tagged with given tag from the server
+            this.http.get<Article[]>(URL + '/api/articles/tag/' + tagId + '/').subscribe(
+                articles => {
+                    // get tag name by id
+                    this.http.get<Tag>(URL + '/api/tags/' + tagId + '/').subscribe(
+                        tag => {
+                            // send tag (needed in template)
+                            observer.next({articles: articles, tag: tag.name});
+                            observer.complete();
+                        },
+                        err => {
+                            console.log('Error: ' + err.message);
+                        }
+                    );
                 },
                 err => {
                     console.log('Error: ' + err.message);
