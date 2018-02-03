@@ -50,6 +50,9 @@ import { ShareButtonModule } from '@ngx-share/button';
 // syntax highlight code
 import { HighlightModule } from 'ngx-highlightjs';
 
+// page scroll
+import {NgxPageScrollModule} from 'ngx-page-scroll';
+
 // routes
 const routes: Routes = [
     // base component contains main layout
@@ -91,6 +94,7 @@ const routes: Routes = [
         FlexLayoutModule,
         ShareButtonModule.forRoot(),
         HighlightModule.forRoot(),
+        NgxPageScrollModule,
 
         // material
         BrowserAnimationsModule,

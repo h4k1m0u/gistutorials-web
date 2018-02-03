@@ -26,6 +26,7 @@ $ ng
 10. Install `flex-layout` (Responsiveness): `npm install @angular/flex-layout`
 11. Install `ngx-sharebuttons` (Share on social media): `npm install @ngx-share/core @ngx-share/button font-awesome`
 12. Install `ngx-highlightjs` (Code syntax highlighting): `npm install ngx-highlightjs`
+13. Install `ngx-page-scroll` (Scroll to content): `npm install ngx-page-scroll`
 
 # Installation of this repo
 
