@@ -15,6 +15,7 @@ import { Article } from '../models/article.model';
 })
 export class ArticlesComponent implements OnInit {
     articles: Article[];
+    url:string = URL;
 
     // inject http
     constructor(private route: ActivatedRoute) { }

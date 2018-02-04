@@ -18,6 +18,7 @@ export class ArticlesDateComponent implements OnInit {
     month: number;
     monthsNames = MONTHS;
     year: number;
+    url:string = URL;
 
     // inject http
     constructor(private route: ActivatedRoute) { }

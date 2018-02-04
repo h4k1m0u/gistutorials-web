@@ -16,6 +16,7 @@ import { Article } from '../models/article.model';
 export class ArticlesTagComponent implements OnInit {
     articles: Article[];
     tag: string;
+    url:string = URL;
 
     // inject http
     constructor(private route: ActivatedRoute) { }
