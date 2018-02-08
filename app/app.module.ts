@@ -4,11 +4,14 @@ import { NgModule } from '@angular/core';
 // services & resolves
 import { MonthsService } from './services/months.service';
 import { ArticlesService } from './services/articles.service';
+import { TagsService } from './services/tags.service';
 import { MonthsResolve } from './months.resolve';
+import { TagsResolve } from './tags.resolve';
 import { ArticleResolve } from './article/article.resolve';
 import { ArticlesResolve } from './articles/articles.resolve';
 import { ArticlesDateResolve } from './articles-date/articles-date.resolve';
 import { ArticlesTagResolve } from './articles-tag/articles-tag.resolve';
+import { TagResolve } from './articles-tag/tag.resolve';
 
 // material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -72,12 +75,12 @@ const routes: Routes = [
         // https://stackoverflow.com/a/45113376/2228912
         path: '',
         component: AppComponent,
-        resolve: { months: MonthsResolve },
+        resolve: { months: MonthsResolve, tags: TagsResolve },
         children: [
             {path: 'articles', component: ArticlesComponent, resolve: { articles: ArticlesResolve }},
             {path: 'article/:id', component: ArticleComponent, resolve: { article: ArticleResolve }},
             {path: 'articles/date/:year/:month', component: ArticlesDateComponent, resolve: { articlesDate: ArticlesDateResolve }},
-            {path: 'articles/tag/:tag', component: ArticlesTagComponent, resolve: { articlesTag: ArticlesTagResolve }},
+            {path: 'articles/tag/:tag', component: ArticlesTagComponent, resolve: { articlesTag: ArticlesTagResolve, tag: TagResolve }},
         ]
     }
 ];
@@ -118,11 +121,14 @@ const routes: Routes = [
         // services & resolvers
         MonthsService,
         ArticlesService,
+        TagsService,
         MonthsResolve,
+        TagsResolve,
         ArticleResolve,
         ArticlesResolve,
         ArticlesDateResolve,
         ArticlesTagResolve,
+        TagResolve,
     ],
     bootstrap: [BaseComponent]
 })

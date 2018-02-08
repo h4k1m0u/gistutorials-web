@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { URL } from '../constants';
 import { Article, Tag } from '../models/article.model';
-import { Feed } from '../models/feed.model';
+import { ArticlesFeed } from '../models/feed.model';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
@@ -15,7 +15,7 @@ export class ArticlesService {
         // send articles as observable to resolve
         return Observable.create(observer => {
             // get articles from the server
-            this.http.get<Feed>(URL + '/api/articles/').subscribe(
+            this.http.get<ArticlesFeed>(URL + '/api/articles/').subscribe(
                 res => {
                     observer.next(res.results);
                     observer.complete();
@@ -65,18 +65,9 @@ export class ArticlesService {
         return Observable.create(observer => {
             // get articles tagged with given tag from the server
             this.http.get<Article[]>(URL + '/api/articles/tag/' + tagId + '/').subscribe(
-                articles => {
-                    // get tag name by id
-                    this.http.get<Tag>(URL + '/api/tags/' + tagId + '/').subscribe(
-                        tag => {
-                            // send tag (needed in template)
-                            observer.next({articles: articles, tag: tag.name});
-                            observer.complete();
-                        },
-                        err => {
-                            console.log('Error: ' + err.message);
-                        }
-                    );
+                res => {
+                    observer.next(res);
+                    observer.complete();
                 },
                 err => {
                     console.log('Error: ' + err.message);

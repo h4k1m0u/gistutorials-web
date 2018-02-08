@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { URL } from '../constants';
 import { ActivatedRoute } from '@angular/router';
-import { Article } from '../models/article.model';
+import { Article, Tag } from '../models/article.model';
 
 @Component({
     selector: 'app-articles-tag',
@@ -15,7 +15,7 @@ import { Article } from '../models/article.model';
 })
 export class ArticlesTagComponent implements OnInit {
     articles: Article[];
-    tag: string;
+    tag: Tag;
     url:string = URL;
 
     // inject http
@@ -24,8 +24,8 @@ export class ArticlesTagComponent implements OnInit {
     ngOnInit() {
         // get requested articles for given tag through resolve
         this.route.data.subscribe((data) => {
-            this.tag = data.articlesTag.tag;
-            this.articles = data.articlesTag.articles;
+            this.tag = data.tag;
+            this.articles = data.articlesTag;
         });
     }
 }

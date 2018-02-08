@@ -9,6 +9,12 @@ main {
     margin: 1em;
 }
 
+nav.menu {
+    mat-nav-list {
+        padding-top: 0;
+    }
+}
+
 aside {
     margin: 1em;
 
@@ -33,5 +39,21 @@ aside {
 
     ul {
         list-style-type: circle;
+    }
+}
+
+nav.tags {
+    margin: 1em;
+
+    ul {
+        padding: 0;
+        list-style: none;
+
+        li {
+            a {
+                color: $primary;
+                text-decoration: none;
+            }
+        }
     }
 }

@@ -6,12 +6,12 @@
     </mat-sidenav-content>
 
     <mat-sidenav position="end" mode="side" [opened]="opened" #sidenav>
-        <nav>
+        <nav class="menu">
             <mat-nav-list>
                 <a mat-list-item routerLink="/articles/">
                     All articles
                 </a>
-                <a mat-list-item *ngFor="let month of months; let i = index"
+                <a mat-list-item *ngFor="let month of months"
                     routerLink="/articles/date/{{ month[0] }}/{{ month[1] }}/">
                     {{ monthsNames[month[1] - 1] }} {{ month[0] }}
                 </a>
@@ -31,6 +31,16 @@
                 <li>Student in Remote Sensing.</li>
                 <li>Python/Django and Angular enthusiast.</li>
             </ul>
+            <hr/>
         </aside>
+
+        <nav class="tags">
+            <h2>Tags</h2>
+            <ul>
+                <li *ngFor="let tag of tags">
+                    <a routerLink="/articles/tag/{{ tag.id }}/">#{{ tag.name }}</a>
+                </li>
+            </ul>
+        </nav>
     </mat-sidenav>
 </mat-sidenav-container>
