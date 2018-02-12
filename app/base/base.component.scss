@@ -7,6 +7,12 @@
     min-height: 100vh;
 }
 
+mat-toolbar {
+    a {
+        color: white;
+    }
+}
+
 .spacer {
     flex: auto;
 }

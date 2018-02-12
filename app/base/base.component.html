@@ -6,7 +6,16 @@
                     {{ appName }}
                 </h1>
             </button>
+
+            <a mat-button routerLink="/articles/">
+                Articles
+            </a>
+            <a mat-button routerLink="/resources/">
+                Resources
+            </a>
+
             <span class="spacer"></span>
+
             <button mat-button [matMenuTriggerFor]="appsMenu">
                 <mat-icon>apps</mat-icon>
             </button>

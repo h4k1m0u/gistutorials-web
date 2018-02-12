@@ -32,6 +32,7 @@ import { ArticlesComponent } from './articles/articles.component';
 import { ArticleComponent } from './article/article.component';
 import { ArticlesDateComponent } from './articles-date/articles-date.component';
 import { ArticlesTagComponent } from './articles-tag/articles-tag.component';
+import { ResourcesComponent } from './resources/resources.component';
 
 // pipes
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
@@ -81,6 +82,7 @@ const routes: Routes = [
             {path: 'article/:id', component: ArticleComponent, resolve: { article: ArticleResolve }},
             {path: 'articles/date/:year/:month', component: ArticlesDateComponent, resolve: { articlesDate: ArticlesDateResolve }},
             {path: 'articles/tag/:tag', component: ArticlesTagComponent, resolve: { articlesTag: ArticlesTagResolve, tag: TagResolve }},
+            {path: 'resources', component: ResourcesComponent},
         ]
     }
 ];
@@ -93,6 +95,7 @@ const routes: Routes = [
         ArticleComponent,
         ArticlesDateComponent,
         ArticlesTagComponent,
+        ResourcesComponent,
         BaseComponent,
         SafeHtmlPipe,
     ],
