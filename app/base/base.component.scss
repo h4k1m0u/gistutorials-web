@@ -19,7 +19,13 @@
     font-size: 5rem;
 }
 
-.credit {
+.banner-mobile {
+    white-space: normal;
+    font-size: 3rem;
+    line-height: 1em;
+}
+
+.banner-credit {
     height: auto;
     margin-top: -2em;
     padding: 0.2em;
@@ -33,8 +39,15 @@
 footer {
     margin-top: auto;
 
-    .date {
-        text-align: center;
-        font-size: 1rem;
+    mat-toolbar {
+        .footer-credit, .footer-copyright {
+            margin-left: auto;
+            font-size: 1rem;
+        }
+
+        .footer-credit {
+            text-decoration: none;
+            color: $primary;
+        }
     }
 }

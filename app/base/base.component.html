@@ -12,11 +12,11 @@
             </button>
         </mat-toolbar-row>
 
-        <mat-toolbar-row class="banner">
+        <mat-toolbar-row class="banner" [ngClass]="{'banner-mobile': media.isActive('xs')}">
             {{ slogan }}
         </mat-toolbar-row>
 
-        <mat-toolbar-row class="credit">
+        <mat-toolbar-row class="banner-credit">
             <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px;" href="https://unsplash.com/@mrrrk_smith?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from John-Mark Kuznietsov">
                 <span style="display:inline-block;padding:2px 3px;">
                     <svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white;" viewBox="0 0 32 32">
@@ -48,17 +48,17 @@
 
 <footer>
     <mat-toolbar>
-        <button mat-button routerLink="/articles/">
-            <h1>
-                {{ appName }}
-            </h1>
-        </button>
-        <a pageScroll pageScrollDuration="500" mat-icon-button color="primary" href="#top">
+        <a pageScroll pageScrollDuration="500" mat-mini-fab color="primary" href="#top">
             <mat-icon>keyboard_arrow_up</mat-icon>
         </a>
-        <span class="spacer date">&copy; {{ date | date: 'yyyy' }}</span>
-        <span>
-            By <a href="https://twitter.com/h4k1m0u" target="_blank" mat-raised-button color="primary">@h4k1m0u</a>
+
+        <span class="footer-copyright" *ngIf="!media.isActive('xs')">
+            {{ appName }} &copy; {{ date | date: 'yyyy' }}
         </span>
+
+        <a class="footer-credit" href="https://twitter.com/h4k1m0u" target="_blank">
+            <i class="fa fa-twitter" aria-hidden="true" color="primary"></i>
+            @h4k1m0u
+        </a>
     </mat-toolbar>
 </footer>

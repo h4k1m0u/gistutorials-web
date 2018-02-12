@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+import { ObservableMedia } from '@angular/flex-layout';
 
 @Component({
   selector: 'app-base',
@@ -11,7 +12,7 @@ export class BaseComponent implements OnInit {
     slogan = 'GIS Tutorials For Everyone';
     date = new Date();
 
-    constructor(private googleAnalytics: Angulartics2GoogleAnalytics) { }
+    constructor(private googleAnalytics: Angulartics2GoogleAnalytics, public media: ObservableMedia) { }
 
     ngOnInit() {
     }
