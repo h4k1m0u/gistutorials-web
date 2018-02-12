@@ -19,6 +19,17 @@
     font-size: 5rem;
 }
 
+.credit {
+    height: auto;
+    margin-top: -2em;
+    padding: 0.2em;
+    display: flex;
+
+    a {
+        margin-left: auto;
+    }
+}
+
 footer {
     margin-top: auto;
 
