@@ -1,7 +1,7 @@
 <header id="top">
     <mat-toolbar color="primary">
         <mat-toolbar-row>
-            <button mat-button routerLink="/articles/">
+            <button mat-button routerLink="/articles/" *ngIf="!media.isActive('xs')">
                 <h1>
                     {{ appName }}
                 </h1>
