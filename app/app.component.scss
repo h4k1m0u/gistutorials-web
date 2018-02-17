@@ -2,7 +2,16 @@
 @import '~variables.scss';
 
 mat-sidenav-container {
-    flex: auto;
+    display: flex;
+}
+
+mat-sidenav-content {
+    margin: 0 !important;
+    flex: 1;
+}
+
+mat-sidenav {
+    position: relative;
 }
 
 main {

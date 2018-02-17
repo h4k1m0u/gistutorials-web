@@ -1,11 +1,5 @@
 <mat-sidenav-container>
-    <mat-sidenav-content>
-        <main>
-            <router-outlet></router-outlet>
-        </main>
-    </mat-sidenav-content>
-
-    <mat-sidenav position="end" mode="side" [opened]="opened" #sidenav>
+    <mat-sidenav mode="side" opened="true" *ngIf="!media.isActive('xs')">
         <nav class="menu">
             <mat-nav-list>
                 <a mat-list-item routerLink="/articles/">
@@ -43,4 +37,10 @@
             </ul>
         </nav>
     </mat-sidenav>
+
+    <mat-sidenav-content>
+        <main>
+            <router-outlet></router-outlet>
+        </main>
+    </mat-sidenav-content>
 </mat-sidenav-container>
