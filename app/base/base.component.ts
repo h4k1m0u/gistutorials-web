@@ -10,6 +10,7 @@ import { ObservableMedia } from '@angular/flex-layout';
 export class BaseComponent implements OnInit {
     appName = 'GIS Tutorials';
     slogan = 'GIS Tutorials For Everyone';
+    subSlogan = 'Python, GIS, Open-Source...'
     date = new Date();
 
     constructor(private googleAnalytics: Angulartics2GoogleAnalytics, public media: ObservableMedia) { }

@@ -18,17 +18,25 @@ mat-toolbar {
 }
 
 .banner {
+    flex-direction: column;
+    justify-content: center;
     height: 250px;
     background: url('/assets/images/banner.png') no-repeat;
     color: white;
     font-family: 'Roboto Condensed';
-    font-size: 5rem;
+
+    .slogan {
+        font-size: 5rem;
+        line-height: 5rem;
+    }
 }
 
 .banner-mobile {
     white-space: normal;
-    font-size: 3rem;
-    line-height: 1em;
+    .slogan {
+        font-size: 3rem;
+        line-height: 1em;
+    }
 }
 
 .banner-credit {

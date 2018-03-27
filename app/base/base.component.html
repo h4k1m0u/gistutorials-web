@@ -22,7 +22,8 @@
         </mat-toolbar-row>
 
         <mat-toolbar-row class="banner" [ngClass]="{'banner-mobile': media.isActive('xs')}">
-            {{ slogan }}
+            <p class="slogan">{{ slogan }}</p>
+            <p class="sub-slogan">{{ subSlogan }}</p>
         </mat-toolbar-row>
 
         <mat-toolbar-row class="banner-credit">
