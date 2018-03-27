@@ -6,8 +6,8 @@
                     All articles
                 </a>
                 <a mat-list-item *ngFor="let month of months"
-                    routerLink="/articles/date/{{ month[0] }}/{{ month[1] }}/">
-                    {{ monthsNames[month[1] - 1] }} {{ month[0] }}
+                    routerLink="/articles/date/{{ month[1] }}/{{ month[0] }}/">
+                    {{ monthsNames[month[0] - 1] }} {{ month[1] }}
                 </a>
             </mat-nav-list>
         </nav>
