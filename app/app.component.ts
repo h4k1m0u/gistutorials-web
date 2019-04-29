@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { URL, MONTHS } from './constants';
 import { Tag } from './models/article.model';
-import { ObservableMedia } from '@angular/flex-layout';
+import { MediaObserver } from '@angular/flex-layout';
 
 
 @Component({
@@ -18,7 +18,7 @@ export class AppComponent {
     opened: boolean = true;
     
     // inject classes
-    constructor(private route: ActivatedRoute, private router: Router, public media: ObservableMedia) { }
+    constructor(private route: ActivatedRoute, private router: Router, public media: MediaObserver) { }
 
     ngOnInit() {
         // get months containing articles through resolve

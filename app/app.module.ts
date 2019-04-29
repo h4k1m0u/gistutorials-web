@@ -43,18 +43,11 @@ import { HttpClientModule } from '@angular/common/http';
 // router
 import { RouterModule, Routes } from '@angular/router';
 
-// google analytics for angular
-import { Angulartics2Module } from 'angulartics2';
-import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
-
 // flex layouts
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 // share buttons
 import { ShareButtonModule } from '@ngx-share/button';
-
-// syntax highlight code
-import { HighlightModule } from 'ngx-highlightjs';
 
 // page scroll
 import {NgxPageScrollModule} from 'ngx-page-scroll';
@@ -87,7 +80,6 @@ const routes: Routes = [
     }
 ];
 
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -103,10 +95,8 @@ const routes: Routes = [
         BrowserModule,
         HttpClientModule,
         RouterModule.forRoot(routes),
-        Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
         FlexLayoutModule,
-        ShareButtonModule.forRoot(),
-        HighlightModule.forRoot(),
+        ShareButtonModule,
         NgxPageScrollModule,
         DisqusModule.forRoot('gistutorials'),
 

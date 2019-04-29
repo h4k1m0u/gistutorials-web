@@ -1,7 +1,7 @@
 // https://blog.thoughtram.io/angular/2016/10/10/resolving-route-data-in-angular-2.html
 // Don't route to page until data is loaded using resolver
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { TagsService } from '../services/tags.service';
 import { Tag } from '../models/article.model';
